@@ -999,15 +999,25 @@ function siteOrigin(){
 }
 const ORIGIN = siteOrigin(), LIVE = !!ORIGIN && !/^(http:\/\/)?(localhost|127\.)/.test(ORIGIN.replace(/^https?:\/\//,''));
 const VOTE_URL = (ORIGIN || 'https://YOUR-APP.streamlit.app') + '/?vote=1';
-let votes = [], lastN = -1, pollT = null, demo = !ORIGIN;
+let votes = [], lastN = -1, pollT = null, demo = !ORIGIN, goodURL = null;
+/* Streamlit Cloud runs the app under /~/+/ ; locally it's the root. Try the app frame's own path first. */
+function resultURLs(){
+  if (goodURL) return [goodURL];
+  const out = [];
+  try { const L = window.parent !== window ? window.parent.location : window.location; out.push(new URL('app/static/results.json', L.origin + L.pathname.replace(/[^/]*$/, '')).href); } catch(e){}
+  out.push(ORIGIN + '/~/+/app/static/results.json', ORIGIN + '/app/static/results.json');
+  return [...new Set(out)];
+}
 const DEMO_VOTES = [6.5,7,5.5,8,6,7.5,6,5,9,7,6.5,4.5,8.5,6,7,6,5.5,7.5,6.5,8].map((h, i) => ({h, bed:['23:30','00:00','00:30','01:00','01:30','02:00+','23:00','22:30'][i % 8], phone: i % 3 !== 0, feel: ['tired','ok','fresh'][i % 3]}));
 function setBadges(){
   $$('.livebadge').forEach(b => { b.classList.toggle('demo', demo); $('span', b).textContent = demo ? 'demo data — opened offline' : (ORIGIN && !LIVE ? 'live · local' : 'live'); });
 }
 async function poll(){
   if (demo){ votes = DEMO_VOTES; render(); return; }
-  try { const r = await fetch(ORIGIN + '/app/static/results.json?t=' + Date.now(), {cache:'no-store'}); votes = JSON.parse(await r.text()) || []; }
-  catch(e){ /* keep last */ }
+  for (const u of resultURLs()){
+    try { const r = await fetch(u + '?t=' + Date.now(), {cache:'no-store'}); if (!r.ok) continue;
+      const d = JSON.parse(await r.text()); if (Array.isArray(d)){ votes = d; goodURL = u; break; } } catch(e){}
+  }
   render();
 }
 function startPoll(){ clearInterval(pollT); poll(); pollT = setInterval(poll, 2500); }
