@@ -17,7 +17,7 @@ Opened locally (`site.html`), the survey slides show clearly labelled demo data.
 ## Controls
 - Dark start screen: **F** — full screen (screen stays), **click / space** — start
 - `→` / space — next, `←` — back, moon phases at the bottom — jump to any slide
-- Speaker names: in `site.html`, `const SPEAKERS = ['Speaker 1', 'Speaker 2', 'Speaker 3'];`
+- Speaker names: in `site.html`, `const SPEAKERS = ['Dinmukhammed', 'Darkhan', 'Nursat'];`
 
 ## Interactive parts
 moon follows the mouse · age slider · live survey QR with live counter · sleep need by age · animated hypnogram ·

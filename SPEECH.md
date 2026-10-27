@@ -2,16 +2,16 @@
 
 | Speaker | Slides | Time |
 |---|---|---|
-| 1 | 1–5: title, a third of your life, **live survey QR**, how much sleep, inside one night | ~2.5 min |
-| 2 | 6–10: what sleep does, hours awake, **sleep debt simulator**, myths, bedtime calculator | ~2.5 min |
-| 3 | 11–16: **live class results**, tips, coffee, **lark or owl test**, tonight's challenge, thank you | ~3 min |
+| 1 · Dinmukhammed | 1–5: title, a third of your life, **live survey QR**, how much sleep, inside one night | ~2.5 min |
+| 2 · Darkhan | 6–10: what sleep does, hours awake, **sleep debt simulator**, myths, bedtime calculator | ~2.5 min |
+| 3 · Nursat | 11–16: **live class results**, tips, coffee, **lark or owl test**, tonight's challenge, thank you | ~3 min |
 
 The clock in the top-right corner moves from 22:00 to 07:00 — the whole talk is "one night".
 Before the talk open `https://<your-app>.streamlit.app/?reset=nightshift` once to clear old answers.
 
 ---
 
-## Speaker 1
+## Speaker 1 · Dinmukhammed
 
 **1. Title.** Good morning — or should I say good night. Our topic is sleep: why it matters and how to get better at it. We'll go through one night together, from 10 p.m. to 7 a.m.
 
@@ -23,7 +23,7 @@ Before the talk open `https://<your-app>.streamlit.app/?reset=nightshift` once t
 
 **5. Inside one night.** Sleep isn't "off". Every night we go through cycles of about 90 minutes: light sleep, deep sleep and REM, when we dream. Deep sleep comes early, REM near the morning.
 
-## Speaker 2
+## Speaker 2 · Darkhan
 
 **6. What sleep does.** While you sleep, your body goes to work: it cleans the brain — in a 2013 study the space between brain cells grew by 60% during sleep — saves memories, repairs the body and balances mood.
 
@@ -35,7 +35,7 @@ Before the talk open `https://<your-app>.streamlit.app/?reset=nightshift` once t
 
 **10. Bedtime calculator.** Wake up between cycles, not in the middle. *(Press + / −.)* To get up at 7:30, fall asleep around 22:15.
 
-## Speaker 3
+## Speaker 3 · Nursat
 
 **11. Live results.** Remember the survey? Here's this room. Our class slept on average ___ hours — the recommendation is 8–10. ___ of ___ slept less than 7 hours, and ___% used their phone in bed.
 
